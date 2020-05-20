@@ -11,10 +11,10 @@ pipeline {
         timestamps()
     }
     stages {
-        tool name: '', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
         stage("create docker image") {
             steps {
                echo "------------ start building image---------------" 
+               tool name:", type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
                dir {'docker/toolbox'} {
                sh 'docker build . '
             }
