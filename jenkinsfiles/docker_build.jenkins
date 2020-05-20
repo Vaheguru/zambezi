@@ -3,6 +3,7 @@
 properties([disableConcurrentBuilds()])
 
 pipeline {
+    tool name:",type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
     agent { 
         label 'master'
         }
@@ -14,7 +15,6 @@ pipeline {
         stage("create docker image") {
             steps {
                echo "------------ start building image---------------" 
-               tool name:", type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
                dir {'docker/toolbox'} {
                sh 'docker build . '
             }
