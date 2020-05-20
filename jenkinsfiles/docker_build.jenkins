@@ -3,7 +3,7 @@
 properties([disableConcurrentBuilds()])
 
 pipeline {
-    tool name:",type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
+    tool name: type:'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
     agent { 
         label 'master'
         }
