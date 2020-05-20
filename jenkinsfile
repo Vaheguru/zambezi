@@ -18,6 +18,9 @@ stage('Deploy')
 {
 steps{
 echo "Deploying the Project.........."
+dir {'docker/toolbox'} {
+    sh 'docker build . '
+}
 }
 }
 }
